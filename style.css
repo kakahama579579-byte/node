@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+
+:root {
+    --bg-color: #0c0a1b; /* شینی تێر و قووڵ */
+    --primary-color: #ffd700; /* زێڕینی پاشایەتی */
+    --secondary-color: #f0e6d2; /* سپی مرواری */
+    --accent-color-1: #1a2a5d; /* شینی قووڵتر بۆ سێبەر */
+    --accent-color-2: #800080; /* وەنەوشەیی شاهانە */
+    --text-color: var(--secondary-color);
+    --glass-bg: rgba(255, 255, 255, 0.05); 
+    --glass-button-bg: rgba(255, 255, 255, 0.1); 
+}
+
+/* Global Styles & Body */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 5vh 1.5vw;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform-style: none; /* هەموو جوڵەی 3D لادەبات */
+}
+
+.royal-static-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 70%),
+        linear-gradient(45deg, rgba(26, 42, 93, 0.08) 0%, rgba(255, 215, 0, 0.08) 100%);
+    z-index: -1;
+    animation: none; /* هەموو ئەنیمەیشنێک لادەبات */
+}
+
+/* Main Container - Royal Static Effect */
+.container-royal-static {
+    background: var(--glass-bg);
+    padding: clamp(4rem, 6vw, 6rem);
+    border-radius: 50px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.95), 
+        0 0 100px var(--primary-color),
+        inset 0 0 60px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px) saturate(250%);
+    border: 6px solid var(--primary-color);
+    width: 95vw;
+    max-width: 1300px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 5vw, 5rem);
+    transform: none; /* هەموو جوڵەی 3D لادەبات */
+    transition: none; /* هەموو گۆڕانکارییەک لادەبات */
+}
+
+.container-royal-static:hover {
+    transform: none;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.95), 
+        0 0 100px var(--primary-color),
+        inset 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Headings */
+.main-heading-royal-static, .sub-heading-royal-static {
+    font-weight: 900;
+    text-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--accent-color-2);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transform: none;
+    color: var(--secondary-color);
+}
+
+/* Form and Inputs - Royal Static Effect */
+.form-royal-static {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    background-color: var(--glass-button-bg);
+    padding: 6rem;
+    border-radius: 35px;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 215, 0, 0.8);
+    border: 4px solid var(--accent-color-1);
+    transform: none;
+    transition: none;
+    backdrop-filter: blur(15px) brightness(130%);
+}
+
+.form-royal-static:hover {
+    transform: none;
+}
+
+.input-group-royal-static {
+    position: relative;
+    transform: none;
+}
+
+.input-royal-static {
+    width: 100%;
+    padding: 3rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 2rem;
+    background: transparent;
+    color: var(--text-color);
+    border: 5px solid var(--accent-color-1);
+    transition: none; /* گۆڕانکارییەکە لادەبات */
+    box-sizing: border-box;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+}
+
+.input-royal-static:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 30px var(--primary-color), inset 0 0 20px rgba(255, 215, 0, 0.9);
+    outline: none;
+}
+
+.input-group-royal-static label {
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    pointer-events: none;
+    transition: none;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.input-royal-static:focus + label,
+.input-royal-static:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+    background: var(--glass-button-bg);
+    padding: 0 2rem;
+    color: var(--primary-color);
+}
+
+.file-label-royal-static {
+    background: var(--glass-button-bg);
+    color: var(--text-color);
+    padding: 3rem;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 0 30px var(--accent-color-1);
+    border: 5px solid var(--accent-color-1);
+    transition: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 2rem;
+    transform: none;
+    backdrop-filter: blur(10px);
+}
+
+.file-label-royal-static:hover {
+    box-shadow: 0 0 60px var(--primary-color);
+    border-color: var(--primary-color);
+    transform: none;
+}
+
+.btn-royal-static {
+    padding: clamp(2rem, 3vw, 3rem) clamp(5rem, 6vw, 6rem);
+    border: none;
+    border-radius: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color-2));
+    color: var(--bg-color);
+    box-shadow: 0 0 40px var(--primary-color);
+    transition: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.9);
+    transform: none;
+}
+
+.btn-royal-static:hover {
+    transform: none;
+    box-shadow: 0 0 70px var(--accent-color-1);
+    background: linear-gradient(45deg, var(--accent-color-1), var(--primary-color));
+    color: var(--secondary-color);
+}
+
+.btn-royal-static:active {
+    transform: none;
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
+/* Item List - Royal Static Effect */
+.item-royal-static {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding: 5rem;
+    border-radius: 40px;
+    margin-bottom: 3.5rem;
+    background-color: var(--glass-bg);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+    border: 4px solid var(--primary-color);
+    transition: none;
+    position: relative;
+    overflow: hidden;
+    transform-style: none;
+    transform: none;
+    backdrop-filter: blur(10px) saturate(200%);
+}
+
+.item-royal-static:hover {
+    transform: none;
+    box-shadow: 0 0 70px var(--accent-color-1);
+}
+
+.item-royal-static img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 0 25px var(--primary-color);
+    transition: none;
+    margin: 0 auto;
+    transform: none;
+}
+
+.item-royal-static:hover img {
+    transform: none;
+    box-shadow: 0 0 40px var(--accent-color-1);
+}
+
+.item-info-royal-static {
+    text-align: center;
+    transform: none;
+}
+
+.item-name-royal-static {
+    font-weight: bold;
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 15px var(--primary-color);
+}
+
+.item-price-royal-static {
+    color: var(--accent-color-2);
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    text-shadow: 0 0 15px var(--accent-color-2);
+}
+
+.item-actions-royal-static {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    transform: none;
+}
+
+.item-actions-royal-static button {
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    font-size: 2.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--glass-button-bg);
+    color: var(--text-color);
+    box-shadow: 0 0 25px var(--primary-color);
+    border: 5px solid var(--primary-color);
+    transition: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+    backdrop-filter: blur(10px);
+}
+
+.item-actions-royal-static button:hover {
+    transform: none;
+    box-shadow: 0 0 50px var(--accent-color-1);
+    color: var(--accent-color-1);
+    border-color: var(--accent-color-1);
+}
+
+.item-actions-royal-static button:active {
+    transform: none;
+    box-shadow: 0 0 25px var(--primary-color);
+}
+
+.edit-btn { color: var(--accent-color-1); }
+.delete-btn { color: var(--primary-color); }
+.restore-btn { color: var(--accent-color-1); }
+.permanent-delete-btn { color: var(--primary-color); }
+
+.deleted {
+    opacity: 0.4;
+    text-decoration: line-through;
+    filter: grayscale(95%);
+    transition: none;
+}
+
+/* Calculator Section - Royal Static Effect */
+.calculator-container-royal-static {
+    background-color: var(--glass-button-bg);
+    border-radius: 35px;
+    padding: 5rem;
+    box-shadow: 0 0 40px var(--primary-color);
+    margin-top: 5rem;
+    border: 4px solid var(--primary-color);
+    transform: none;
+    backdrop-filter: blur(12px);
+}
+
+.calculator-royal-static {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--glass-bg);
+    border-radius: 45px;
+    padding: 5rem;
+    box-shadow: 0 0 50px var(--primary-color), 0 0 80px var(--accent-color-1);
+    border: 5px solid var(--primary-color);
+    transform: none;
+    backdrop-filter: blur(12px);
+}
+
+.screen-royal-static {
+    background-color: var(--glass-button-bg);
+    padding: 3rem;
+    border-radius: 25px;
+    margin-bottom: 3.5rem;
+    text-align: right;
+    box-shadow: inset 0 0 25px var(--primary-color);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: none;
+    backdrop-filter: blur(10px);
+}
+
+.calc-history-display {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px var(--secondary-color);
+    font-size: 1.8rem;
+}
+
+.calc-current-display {
+    font-size: 7rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px var(--primary-color);
+}
+
+.buttons-grid-royal-static {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    transform-style: none;
+}
+
+.btn-calc-royal-static {
+    padding: 2.5rem;
+    font-size: 2.5rem;
+    border-radius: 25px;
+    border: none;
+    background-color: var(--glass-button-bg);
+    color: var(--text-color);
+    box-shadow: 0 0 20px var(--accent-color-1);
+    border: 5px solid var(--accent-color-1);
+    transition: none;
+    transform: none;
+    backdrop-filter: blur(10px);
+}
+
+.btn-calc-royal-static:hover {
+    transform: none;
+    box-shadow: 0 0 40px var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-calc-royal-static:active {
+    transform: none;
+    box-shadow: 0 0 20px var(--accent-color-1);
+}
+
+.btn-calc-royal-static.zero { grid-column: span 2; }
+.func { color: var(--secondary-color); border-color: var(--secondary-color); }
+.operator { color: var(--primary-color); border-color: var(--primary-color); }
+.equal { background-color: var(--accent-color-1); border-color: var(--accent-color-1); color: var(--secondary-color); text-shadow: none; }
+
+/* Status Message */
+.status-message-royal-static {
+    margin: 4rem auto;
+    padding: 3rem;
+    font-weight: bold;
+    border-radius: 25px;
+    display: none;
+    text-align: right;
+    box-shadow: 0 0 30px var(--primary-color);
+    transition: none;
+    border: 4px solid var(--primary-color);
+    background-color: var(--glass-button-bg);
+    transform: none;
+    backdrop-filter: blur(10px);
+}
+
+.status-message-royal-static.success {
+    color: var(--accent-color-1);
+}
+
+.status-message-royal-static.error {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container-royal-static {
+        padding: 3rem;
+    }
+    .main-heading-royal-static {
+        font-size: 3.5rem;
+    }
+    .sub-heading-royal-static {
+        font-size: 2.5rem;
+    }
+    .item-royal-static {
+        flex-direction: column;
+        align-items: center;
+    }
+}

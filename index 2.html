@@ -1,0 +1,82 @@
+<DOCTYPE html>
+<html lang="ckb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیستەمی گڵاسی شاهانەی جێگیر</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="royal-static-background"></div>
+    <div class="container-royal-static">
+        <h1 class="main-heading-royal-static">بەڕێوەبەری کاڵای شاهانە</h1>
+        
+        <form id="item-form" class="form-royal-static">
+            <div class="input-group-royal-static">
+                <input type="text" id="item-name" placeholder="" class="input-royal-static" required>
+                <label for="item-name">ناوی کاڵا</label>
+            </div>
+            <div class="input-group-royal-static">
+                <input type="text" id="item-price" placeholder="" class="input-royal-static" required>
+                <label for="item-price">نرخی کاڵا</label>
+            </div>
+            <label for="item-image" class="file-label-royal-static">
+                <i class="fas fa-crown"></i>
+                <span id="file-name">وێنەی کاڵا باربکە</span>
+                <input type="file" id="item-image" accept="image/*">
+            </label>
+            <button type="submit" class="btn-royal-static">زیادکردن <i class="fas fa-gem"></i></button>
+        </form>
+
+        <div id="status-message" class="status-message-royal-static"></div>
+
+        <div class="calculator-container-royal-static">
+            <h2 class="sub-heading-royal-static">حاسیبەی شاهانە</h2>
+            <div class="calculator-royal-static">
+                <div class="screen-royal-static">
+                    <div id="calc-history-display" class="calc-history-display"></div>
+                    <input type="text" id="calc-current-display" class="calc-current-display" value="0" readonly>
+                </div>
+                <div class="buttons-grid-royal-static">
+                    <button class="btn-calc-royal-static func">AC</button>
+                    <button class="btn-calc-royal-static func">DEL</button>
+                    <button class="btn-calc-royal-static operator">/</button>
+                    <button class="btn-calc-royal-static operator">*</button>
+                    <button class="btn-calc-royal-static">7</button>
+                    <button class="btn-calc-royal-static">8</button>
+                    <button class="btn-calc-royal-static">9</button>
+                    <button class="btn-calc-royal-static operator">-</button>
+                    <button class="btn-calc-royal-static">4</button>
+                    <button class="btn-calc-royal-static">5</button>
+                    <button class="btn-calc-royal-static">6</button>
+                    <button class="btn-calc-royal-static operator">+</button>
+                    <button class="btn-calc-royal-static">1</button>
+                    <button class="btn-calc-royal-static">2</button>
+                    <button class="btn-calc-royal-static">3</button>
+                    <button class="btn-calc-royal-static equal">=</button>
+                    <button class="btn-calc-royal-static zero">0</button>
+                    <button class="btn-calc-royal-static dot">.</button>
+                </div>
+            </div>
+            <div id="history-panel" class="history-panel-royal-static">
+                <div class="history-header-royal-static">
+                    <h3>مێژووی ژماردن</h3>
+                    <button id="clear-history-btn" class="clear-history-btn-royal-static">پاککردنەوە <i class="fas fa-trash-alt"></i></button>
+                </div>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+        
+        <div class="item-list-header-royal-static">
+            <h3 class="sub-heading-royal-static">لیستی کاڵاکان</h3>
+            <button id="show-deleted-btn" class="btn-royal-static">پیشاندانی سڕاوەکان <i class="fas fa-eye"></i></button>
+        </div>
+        <div id="item-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
